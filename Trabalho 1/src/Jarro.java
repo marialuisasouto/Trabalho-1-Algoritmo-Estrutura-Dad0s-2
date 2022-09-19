@@ -75,4 +75,12 @@ public class Jarro {
         }
         return false;
     }
+
+    public int precisaReceber() {
+
+        if (quantidadeContida < quantidadeDesejada) {
+            return quantidadeContida - quantidadeDesejada;
+        }
+        return 0;
+    }
 }
