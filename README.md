@@ -1,4 +1,4 @@
-<h1 align="center"> Trabalho 1 - Algoritmo e Estrutura d Dados 2! </h1>
+<h1 align="center"> Trabalho 1 - Algoritmo e Estrutura de Dados 2! </h1>
 
 # Índice
 
