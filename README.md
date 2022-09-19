@@ -35,7 +35,7 @@ tipo/descricao-separada-por-hifen
 Exemplo:
 
 ```bash
-git checkout -m feature/adicionar-manu
+git checkout -m feature/adicionar-menu
 ```
 
 ## Padrão de Commits
