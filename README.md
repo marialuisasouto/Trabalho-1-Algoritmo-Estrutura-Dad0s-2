@@ -48,3 +48,11 @@ Exemplo:
 git commit -m "feature: adicionado o menu na aplicação"
 ```
 
+## Instruções de Funcionamento
+Para que o programe funcione corretamente é necessário que
+o arquivo a ser importado para testes esteja localizado na
+pasta raiz do programa.
+Além disso, quando se for digitar o nome do arquivo a ser 
+importado não pode ser escrita a extensão do arquivo, apenas
+o nome.
+
