@@ -6,7 +6,7 @@
 - [Planejamento](#Planejamento)
 - [Tecnologias](#Tecnologias)
 - [Estrutura das Branches](#EstruturadasBranches)
-- [Padrão de Commits](#Padrão de Commits)
+- [Padrão de Commits](#PadrãodeCommits)
 
 
 ## Descrição
