@@ -13,7 +13,7 @@ public class Aplicativo {
         String linha = "";
         String separadorDeCampo = " ";
 
-        while((linha = br.readLine()) != null){
+        while ((linha = br.readLine()) != null) {
             String[] dados = linha.split(separadorDeCampo);
             String capacidade1Str = dados[0];
             String capacidade2Str = dados[1];
@@ -25,9 +25,9 @@ public class Aplicativo {
                 capacidade1 = Integer.parseInt(capacidade1Str);
                 capacidade2 = Integer.parseInt(capacidade2Str);
                 capacidade3 = Integer.parseInt(capacidade3Str);
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.err.println("Dados inválidos no arquivo.");
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.err.println("Erro inesperado.");
             }
 
@@ -39,13 +39,13 @@ public class Aplicativo {
             int quantidadeContida1 = 0;
             int quantidadeContida2 = 0;
             int quantidadeContida3 = 0;
-            try{
+            try {
                 quantidadeContida1 = Integer.parseInt(quantidadeContida1Str);
                 quantidadeContida2 = Integer.parseInt(quantidadeContida2Str);
                 quantidadeContida3 = Integer.parseInt(quantidadeContida3Str);
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.err.println("Dados inválidos no arquivo.");
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.err.println("Erro inesperado.");
             }
 
@@ -61,9 +61,9 @@ public class Aplicativo {
                 quantidadeDesejada1 = Integer.parseInt(quantidadeDesejada1Str);
                 quantidadeDesejada2 = Integer.parseInt(quantidadeDesejada2Str);
                 quantidadeDesejada3 = Integer.parseInt(quantidadeDesejada3Str);
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.err.println("Dados inválidos no arquivo.");
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.err.println("Erro inesperado.");
             }
 
@@ -71,7 +71,7 @@ public class Aplicativo {
             Jarro jarro2 = new Jarro(capacidade2, quantidadeContida2, quantidadeDesejada2);
             Jarro jarro3 = new Jarro(capacidade3, quantidadeContida3, quantidadeDesejada3);
 
-            //TODO
+            // TODO
 
             br.readLine();
             br.readLine();
