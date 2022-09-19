@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Aplicativo {
+
     public void leArquivo(String nomeArquivo) throws IOException {
         Path path = Paths.get(nomeArquivo + ".txt");
         BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset());
@@ -13,7 +14,67 @@ public class Aplicativo {
         String separadorDeCampo = " ";
 
         while((linha = br.readLine()) != null){
+            String[] dados = linha.split(separadorDeCampo);
+            String capacidade1Str = dados[0];
+            String capacidade2Str = dados[1];
+            String capacidade3Str = dados[2];
+            int capacidade1 = 0;
+            int capacidade2 = 0;
+            int capacidade3 = 0;
+            try {
+                capacidade1 = Integer.parseInt(capacidade1Str);
+                capacidade2 = Integer.parseInt(capacidade2Str);
+                capacidade3 = Integer.parseInt(capacidade3Str);
+            } catch (NumberFormatException e){
+                System.err.println("Dados inválidos no arquivo.");
+            } catch (Exception e){
+                System.err.println("Erro inesperado.");
+            }
 
+            linha = br.readLine();
+            dados = linha.split(separadorDeCampo);
+            String quantidadeContida1Str = dados[0];
+            String quantidadeContida2Str = dados[1];
+            String quantidadeContida3Str = dados[2];
+            int quantidadeContida1 = 0;
+            int quantidadeContida2 = 0;
+            int quantidadeContida3 = 0;
+            try{
+                quantidadeContida1 = Integer.parseInt(quantidadeContida1Str);
+                quantidadeContida2 = Integer.parseInt(quantidadeContida2Str);
+                quantidadeContida3 = Integer.parseInt(quantidadeContida3Str);
+            } catch (NumberFormatException e){
+                System.err.println("Dados inválidos no arquivo.");
+            } catch (Exception e){
+                System.err.println("Erro inesperado.");
+            }
+
+            linha = br.readLine();
+            dados = linha.split(separadorDeCampo);
+            String quantidadeDesejada1Str = dados[0];
+            String quantidadeDesejada2Str = dados[1];
+            String quantidadeDesejada3Str = dados[2];
+            int quantidadeDesejada1 = 0;
+            int quantidadeDesejada2 = 0;
+            int quantidadeDesejada3 = 0;
+            try {
+                quantidadeDesejada1 = Integer.parseInt(quantidadeDesejada1Str);
+                quantidadeDesejada2 = Integer.parseInt(quantidadeDesejada2Str);
+                quantidadeDesejada3 = Integer.parseInt(quantidadeDesejada3Str);
+            } catch (NumberFormatException e){
+                System.err.println("Dados inválidos no arquivo.");
+            } catch (Exception e){
+                System.err.println("Erro inesperado.");
+            }
+
+            Jarro jarro1 = new Jarro(capacidade1, quantidadeContida1, quantidadeDesejada1);
+            Jarro jarro2 = new Jarro(capacidade2, quantidadeContida2, quantidadeDesejada2);
+            Jarro jarro3 = new Jarro(capacidade3, quantidadeContida3, quantidadeDesejada3);
+
+            //TODO
+
+            br.readLine();
+            br.readLine();
         }
     }
 }
