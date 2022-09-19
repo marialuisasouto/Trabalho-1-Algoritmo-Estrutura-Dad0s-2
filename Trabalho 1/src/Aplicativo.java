@@ -7,6 +7,8 @@ import java.nio.file.Paths;
 
 public class Aplicativo {
 
+    int contadorProblemas = 1;
+
     public void leArquivo(String nomeArquivo) throws IOException {
         Path path = Paths.get(nomeArquivo + ".txt");
         BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset());
@@ -71,10 +73,45 @@ public class Aplicativo {
             Jarro jarro2 = new Jarro(capacidade2, quantidadeContida2, quantidadeDesejada2);
             Jarro jarro3 = new Jarro(capacidade3, quantidadeContida3, quantidadeDesejada3);
 
-            // TODO
+            balanceiaJarros(jarro1, jarro2, jarro3);
 
             br.readLine();
             br.readLine();
         }
+    }
+
+    public void balanceiaJarros(Jarro jarro1, Jarro jarro2, Jarro jarro3){
+        int movimentos = 0;
+        if(!jarro1.testaCapacidadeContida() | !jarro1.testaCapacidadeDesejada()){
+            System.out.println("Não é possível resolver este problema.");
+            return;
+        }
+        if(!jarro2.testaCapacidadeContida() | !jarro2.testaCapacidadeDesejada()){
+            System.out.println("Não é possível resolver este problema.");
+            return;
+        }
+        if(!jarro3.testaCapacidadeContida() | !jarro3.testaCapacidadeDesejada()){
+            System.out.println("Não é possível resolver este problema.");
+            return;
+        }
+
+        if(jarro1.getQuantidadeContida() > jarro1.getQuantidadeDesejada() && jarro1.getQuantidadeContida() != 0){
+            int valor = jarro1.getQuantidadeContida() - jarro1.getQuantidadeDesejada();
+            if(jarro2.testaPodeReceber(valor)){
+                jarro1.enviaAgua(jarro2, valor);
+                movimentos++;
+            }
+            else if(jarro3.testaPodeReceber(valor)){
+                jarro1.enviaAgua(jarro3, valor);
+                movimentos++;
+            }
+        }
+
+
+        System.out.println("Problema " + contadorProblemas + ":");
+        System.out.println("Resultado: " + jarro1.getQuantidadeContida() + " " + jarro2.getQuantidadeContida() + " " + jarro3.getQuantidadeContida());
+        System.out.println("Movimentos: " + movimentos);
+        System.out.println("--------------------");
+        contadorProblemas++;
     }
 }
