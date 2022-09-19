@@ -1,5 +1,3 @@
-import java.security.DrbgParameters.Capability;
-
 public class Jarro {
 
     private int capacidade;

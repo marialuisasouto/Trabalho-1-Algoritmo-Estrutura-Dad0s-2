@@ -80,36 +80,57 @@ public class Aplicativo {
         }
     }
 
-    public void balanceiaJarros(Jarro jarro1, Jarro jarro2, Jarro jarro3){
+    public void balanceiaJarros(Jarro jarro1, Jarro jarro2, Jarro jarro3) {
         int movimentos = 0;
-        if(!jarro1.testaCapacidadeContida() | !jarro1.testaCapacidadeDesejada()){
+        if (!jarro1.testaCapacidadeContida() | !jarro1.testaCapacidadeDesejada()) {
             System.out.println("Não é possível resolver este problema.");
             return;
         }
-        if(!jarro2.testaCapacidadeContida() | !jarro2.testaCapacidadeDesejada()){
+        if (!jarro2.testaCapacidadeContida() | !jarro2.testaCapacidadeDesejada()) {
             System.out.println("Não é possível resolver este problema.");
             return;
         }
-        if(!jarro3.testaCapacidadeContida() | !jarro3.testaCapacidadeDesejada()){
+        if (!jarro3.testaCapacidadeContida() | !jarro3.testaCapacidadeDesejada()) {
             System.out.println("Não é possível resolver este problema.");
             return;
         }
 
-        if(jarro1.getQuantidadeContida() > jarro1.getQuantidadeDesejada() && jarro1.getQuantidadeContida() != 0){
+        if (jarro1.getQuantidadeContida() > jarro1.getQuantidadeDesejada() && jarro1.getQuantidadeContida() != 0) {
             int valor = jarro1.getQuantidadeContida() - jarro1.getQuantidadeDesejada();
-            if(jarro2.testaPodeReceber(valor)){
+            if (jarro2.testaPodeReceber(valor)) {
                 jarro1.enviaAgua(jarro2, valor);
                 movimentos++;
-            }
-            else if(jarro3.testaPodeReceber(valor)){
+            } else if (jarro3.testaPodeReceber(valor)) {
                 jarro1.enviaAgua(jarro3, valor);
                 movimentos++;
             }
         }
 
+        if (jarro2.getQuantidadeContida() > jarro2.getQuantidadeDesejada() && jarro2.getQuantidadeContida() != 0) {
+            int valor = jarro2.getQuantidadeContida() - jarro2.getQuantidadeDesejada();
+            if (jarro1.testaPodeReceber(valor)) {
+                jarro2.enviaAgua((jarro1), valor);
+                movimentos++;
+            } else if (jarro3.testaPodeReceber(valor)) {
+                jarro2.enviaAgua(jarro3, valor);
+                movimentos++;
+            }
+        }
+
+        if (jarro3.getQuantidadeContida() > jarro3.getQuantidadeDesejada() && jarro3.getQuantidadeContida() != 0) {
+            int valor = jarro3.getQuantidadeContida() - jarro3.getQuantidadeDesejada();
+            if (jarro1.testaPodeReceber(valor)) {
+                jarro3.enviaAgua((jarro1), valor);
+                movimentos++;
+            } else if (jarro2.testaPodeReceber(valor)) {
+                jarro3.enviaAgua(jarro2, valor);
+                movimentos++;
+            }
+        }
 
         System.out.println("Problema " + contadorProblemas + ":");
-        System.out.println("Resultado: " + jarro1.getQuantidadeContida() + " " + jarro2.getQuantidadeContida() + " " + jarro3.getQuantidadeContida());
+        System.out.println("Resultado: " + jarro1.getQuantidadeContida() + " " + jarro2.getQuantidadeContida() + " "
+                + jarro3.getQuantidadeContida());
         System.out.println("Movimentos: " + movimentos);
         System.out.println("--------------------");
         contadorProblemas++;
