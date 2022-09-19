@@ -79,7 +79,7 @@ public class Jarro {
     public int precisaReceber() {
 
         if (quantidadeContida < quantidadeDesejada) {
-            return quantidadeContida - quantidadeDesejada;
+            return quantidadeDesejada - quantidadeContida;
         }
         return 0;
     }
