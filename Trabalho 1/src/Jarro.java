@@ -1,3 +1,5 @@
+import java.security.DrbgParameters.Capability;
+
 public class Jarro {
 
     private int capacidade;
@@ -54,5 +56,23 @@ public class Jarro {
             return false;
         }
         return true;
+    }
+
+    public boolean testaPodeReceber(int valor) {
+
+        if (capacidade >= quantidadeContida + valor) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean enviaAgua(Jarro jarro, int valor) {
+
+        if (jarro.testaPodeReceber(valor)) {
+            jarro.setQuantidadeContida(getQuantidadeContida() + valor);
+            this.setQuantidadeContida(getQuantidadeContida() - valor);
+            return true;
+        }
+        return false;
     }
 }
