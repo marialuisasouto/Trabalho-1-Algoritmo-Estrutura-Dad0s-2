@@ -34,4 +34,25 @@ public class Jarro {
         this.quantidadeDesejada = quantidadeDesejada;
     }
 
+    public boolean testaResultado() {
+        if (quantidadeDesejada == quantidadeContida) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean testaCapacidadeDesejada() {
+        if (quantidadeDesejada > capacidade) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean testaCapacidadeContida() {
+
+        if (quantidadeContida > capacidade) {
+            return false;
+        }
+        return true;
+    }
 }
