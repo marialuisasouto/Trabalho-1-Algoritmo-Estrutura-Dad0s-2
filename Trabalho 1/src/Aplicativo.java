@@ -97,10 +97,10 @@ public class Aplicativo {
 
         if (jarro1.getQuantidadeContida() > jarro1.getQuantidadeDesejada() && jarro1.getQuantidadeContida() != 0) {
             int valor = jarro1.getQuantidadeContida() - jarro1.getQuantidadeDesejada();
-            if (jarro2.testaPodeReceber(valor)) {
+            if (jarro2.testaPodeReceber(valor) && !jarro2.testaResultado()) {
                 jarro1.enviaAgua(jarro2, valor);
                 movimentos++;
-            } else if (jarro3.testaPodeReceber(valor)) {
+            } else if (jarro3.testaPodeReceber(valor) && !jarro3.testaResultado()) {
                 jarro1.enviaAgua(jarro3, valor);
                 movimentos++;
             }
@@ -108,10 +108,10 @@ public class Aplicativo {
 
         if (jarro2.getQuantidadeContida() > jarro2.getQuantidadeDesejada() && jarro2.getQuantidadeContida() != 0) {
             int valor = jarro2.getQuantidadeContida() - jarro2.getQuantidadeDesejada();
-            if (jarro1.testaPodeReceber(valor)) {
+            if (jarro1.testaPodeReceber(valor) && !jarro1.testaResultado()) {
                 jarro2.enviaAgua((jarro1), valor);
                 movimentos++;
-            } else if (jarro3.testaPodeReceber(valor)) {
+            } else if (jarro3.testaPodeReceber(valor) && !jarro3.testaResultado()) {
                 jarro2.enviaAgua(jarro3, valor);
                 movimentos++;
             }
@@ -119,10 +119,10 @@ public class Aplicativo {
 
         if (jarro3.getQuantidadeContida() > jarro3.getQuantidadeDesejada() && jarro3.getQuantidadeContida() != 0) {
             int valor = jarro3.getQuantidadeContida() - jarro3.getQuantidadeDesejada();
-            if (jarro1.testaPodeReceber(valor)) {
+            if (jarro1.testaPodeReceber(valor) && !jarro1.testaResultado()) {
                 jarro3.enviaAgua((jarro1), valor);
                 movimentos++;
-            } else if (jarro2.testaPodeReceber(valor)) {
+            } else if (jarro2.testaPodeReceber(valor) && !jarro2.testaResultado()) {
                 jarro3.enviaAgua(jarro2, valor);
                 movimentos++;
             }
