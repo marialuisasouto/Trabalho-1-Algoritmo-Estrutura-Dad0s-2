@@ -11,22 +11,23 @@
 
 ## Descrição
 - Nomes: Felipe Cardona e Maria Luísa Souto 
-- Professora: Prof. Marcelo Cohen
-- Matéria: Algoritmo e Estrutura d Dados 2
-- Repositório do trabalho:  
+- Professor: Prof. Marcelo Cohen
+- Matéria: Algoritmo e Estrutura d Dados II
+- Repositório do trabalho: https://github.com/marialuisasouto/Trabalho-1-Algoritmo-Estrutura-Dados-2.git
 
 
 ## Planejamento
-- Fazer um readme com as informações de como o programa deverá ser utilizado
-- Fazer a classe menu para incluir a gramática e dispor os resultados (terminais e não terminais) 
-- Fazer uma classe gramática com duas arraylist (uma não terminais e outra terminais)
-- Dentro da classe gramática, vamos criar os métodos para testar a gramática
+- Qual o problema sendo resolvido
+- Como o problema foi modelado
+- Como é o processo de solução, apresentando exemplos e algoritmos
+- Os resultados dos casos de teste
+- Conclusão do grupo
+
 
 ## Tecnologias
 Java
 
 ## Estrutura das Branches
-
 
 Tipos: feature, fix
 tipo/descricao-separada-por-hifen
