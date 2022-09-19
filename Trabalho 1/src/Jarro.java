@@ -69,8 +69,8 @@ public class Jarro {
     public boolean enviaAgua(Jarro jarro, int valor) {
 
         if (jarro.testaPodeReceber(valor)) {
-            jarro.setQuantidadeContida(getQuantidadeContida() + valor);
-            this.setQuantidadeContida(getQuantidadeContida() - valor);
+            jarro.setQuantidadeContida(jarro.getQuantidadeContida() + valor);
+            this.setQuantidadeContida(this.getQuantidadeContida() - valor);
             return true;
         }
         return false;
