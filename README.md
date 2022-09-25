@@ -25,7 +25,7 @@
 
 
 ## Tecnologias
-Java
+Kotlin
 
 ## Estrutura das Branches
 
